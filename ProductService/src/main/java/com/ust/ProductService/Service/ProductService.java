@@ -54,6 +54,7 @@ public class ProductService {
     }
 
     public List<Review> getReviewsByProductId(Long pid) {
+
         return reviewFeignClient.getReviewsByProductId(pid);
     }
 
@@ -64,4 +65,5 @@ public class ProductService {
     public List<User> getUsersByProductId(Long pid) {
         return userFeignClient.getUsersByProductId(pid);
     }
+
 }

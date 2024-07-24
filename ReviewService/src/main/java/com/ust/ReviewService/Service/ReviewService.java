@@ -56,4 +56,8 @@ public class ReviewService {
     public User getUserById(Long uid) {
         return userFeignClient.getUserById(uid);
     }
+
+    public List<Review> getReviewsByProductId(Long pid) {
+        return reviewRepository.findByPid(pid);
+    }
 }

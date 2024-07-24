@@ -47,4 +47,8 @@ public class UserService {
     public Product getProductById(Long pid) {
         return productFeignClient.getProductById(pid);
     }
+
+    public List<User> getUsersByProductId(Long pid) {
+        return userRepository.findByPid(pid);
+    }
 }

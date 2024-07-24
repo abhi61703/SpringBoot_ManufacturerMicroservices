@@ -14,7 +14,7 @@ public class ManufacturerController {
     @Autowired
     private ManufacturerService manufacturerService;
 
-    @GetMapping("/{mid}/products")
+    @GetMapping("/products/{mid}")
     public List<Product> getProductsByManufacturerId(@PathVariable Long mid) {
         return manufacturerService.getProductsByManufacturerId(mid);
     }
@@ -41,7 +41,6 @@ public class ManufacturerController {
 
     @DeleteMapping("/{id}")
     public void deleteManufacturer(@PathVariable Long id) {
-
         manufacturerService.deleteManufacturer(id);
     }
 }

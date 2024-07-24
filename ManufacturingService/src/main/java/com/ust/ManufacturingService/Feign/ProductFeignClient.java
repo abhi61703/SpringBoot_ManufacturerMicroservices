@@ -9,8 +9,6 @@ import java.util.List;
 
 @FeignClient(name = "product-service")
 public interface ProductFeignClient {
-    @GetMapping("/products/{pid}")
-    Product getProductById(@PathVariable("pid") Long pid);
 
     @GetMapping("/products/manufacturer/{mid}")
     List<Product> getProductsByManufacturerId(@PathVariable("mid") Long mid);

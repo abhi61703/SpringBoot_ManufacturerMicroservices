@@ -1,6 +1,7 @@
 package com.ust.ProductService.Controller;
 
 import com.ust.ProductService.Entity.Product;
+import com.ust.ProductService.Response.Review;
 import com.ust.ProductService.Response.User;
 import com.ust.ProductService.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,6 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
-
     @PostMapping
     public void addProduct(@RequestBody Product product) {
         productService.addProduct(product);
@@ -33,8 +33,8 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public void deleteProduct(@PathVariable Long id) {
         productService.deleteProduct(id);
-
     }
+
     @GetMapping("/{id}")
     public Product getProductById(@PathVariable Long id) {
         return productService.getProductById(id);
@@ -50,4 +50,8 @@ public class ProductController {
         return productService.getUsersByProductId(pid);
     }
 
+    @GetMapping("/{pid}/reviews")
+    public List<Review> getReviewsByProductId(@PathVariable Long pid) {
+        return productService.getReviewsByProductId(pid);
+    }
 }

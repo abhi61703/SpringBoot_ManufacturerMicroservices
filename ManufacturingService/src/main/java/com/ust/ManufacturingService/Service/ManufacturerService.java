@@ -44,10 +44,6 @@ public class ManufacturerService {
         manufacturerRepository.deleteById(id);
     }
 
-    public Product getProductById(Long pid) {
-        return productFeignClient.getProductById(pid);
-    }
-
     public List<Product> getProductsByManufacturerId(Long mid) {
         return productFeignClient.getProductsByManufacturerId(mid);
     }

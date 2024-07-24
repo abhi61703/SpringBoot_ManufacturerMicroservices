@@ -38,7 +38,7 @@ public class UserController {
         userService.deleteUser(id);
     }
 
-    @GetMapping("/users/product/{pid}")
+    @GetMapping("/product/{pid}")
     public List<User> getUsersByProductId(@PathVariable Long pid) {
         return userService.getUsersByProductId(pid);
     }
