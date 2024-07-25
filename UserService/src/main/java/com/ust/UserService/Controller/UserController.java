@@ -1,6 +1,7 @@
 package com.ust.UserService.Controller;
 
 import com.ust.UserService.Entity.User;
+import com.ust.UserService.Response.Review;
 import com.ust.UserService.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -43,4 +44,8 @@ public class UserController {
         return userService.getUsersByProductId(pid);
     }
 
+    @GetMapping("/{uid}/reviews")
+    public List<Review> getReviewsByUserId(@PathVariable Long uid) {
+        return userService.getReviewsByUserId(uid);
+    }
 }

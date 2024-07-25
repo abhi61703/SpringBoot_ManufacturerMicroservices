@@ -2,8 +2,10 @@ package com.ust.UserService.Service;
 
 import com.ust.UserService.Entity.User;
 import com.ust.UserService.Feign.ProductFeignClient;
+import com.ust.UserService.Feign.ReviewFeignClient;
 import com.ust.UserService.Repository.UserRepository;
 import com.ust.UserService.Response.Product;
+import com.ust.UserService.Response.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,9 @@ public class UserService {
 
     @Autowired
     private ProductFeignClient productFeignClient;
+
+    @Autowired
+    private ReviewFeignClient reviewFeignClient;
 
     public List<User> getAllUsers() {
         return userRepository.findAll();
@@ -50,5 +55,8 @@ public class UserService {
 
     public List<User> getUsersByProductId(Long pid) {
         return userRepository.findByPid(pid);
+    }
+    public List<Review> getReviewsByUserId(Long uid) {
+        return reviewFeignClient.getReviewsByUserId(uid);
     }
 }

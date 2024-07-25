@@ -60,4 +60,8 @@ public class ReviewService {
     public List<Review> getReviewsByProductId(Long pid) {
         return reviewRepository.findByPid(pid);
     }
+
+    public List<Review> getReviewsByUserId(Long uid) {
+        return reviewRepository.findByUid(uid);
+    }
 }

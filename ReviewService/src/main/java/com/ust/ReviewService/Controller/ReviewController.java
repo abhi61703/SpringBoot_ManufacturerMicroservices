@@ -42,4 +42,9 @@ public class ReviewController {
     public List<Review> getReviewsByProductId(@PathVariable Long pid) {
         return reviewService.getReviewsByProductId(pid);
     }
+
+    @GetMapping("/user")
+    public List<Review> getReviewsByUserId(@RequestParam Long uid) {
+        return reviewService.getReviewsByUserId(uid);
+    }
 }
